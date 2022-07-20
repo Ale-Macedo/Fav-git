@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --ff-primary: 'Roboto', sans-serif;
+  --fc-primary: #E1E1E6;        
+  --fc-remuve: #F75A68;
+
+  --bg-primary: #000000;
+  --bg-input:#06181C;
+  --bg-button: hsla(195, 91%, 25%, 1);
+  --bg-thead: hsla(194, 72%, 13%, 1);
+  --bg-tbody-odd: hsla(196, 100%, 54%, 0.5);
+  --bg-tbody-even: hsla(192, 65%, 7%, 1);
+
+
+}
+
+body *{
+  font-size: 1.6rem;
+  font-family: var(--ff-primary);
+  color: var(--fc-primary);
+}
+
+body{
+  background: var(--bg-primary);
+}
+
+#app{
+/* border: 1px solid red; */
+height: 100vh;
+}
+
+nav{
+  /* border: 2px solid rgb(153, 0, 255); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 5rem 0;
+}
+
+.search{
+  /* border: 2px solid rgb(0, 255, 21); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.search input{
+  text-align: center;
+  border: 0;
+  border-radius: 50px;
+  background: var(--bg-input);
+  height: 3.5rem;
+  width: 35rem;
+}
+
+.search input::placeholder{
+  text-align: center;
+}
+
+.search button{
+
+  background-color: var(--bg-button);
+  
+  height: 3.5rem;
+  width: 100%;
+  
+  border: none;
+  border-radius: 50px;
+  
+  cursor: pointer;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.search button:hover{
+  filter: brightness(1.1);
+}
+
+ header{
+  margin: 0 5vw;
+  border: 1px solid #4A808C;
+  
+  border-radius: 1.2rem;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table *{
+  font-size: 2rem;
+}
+
+thead tr th {
+  text-align: center;
+  background: var(--bg-thead);
+}
+
+thead tr th:first-child{
+  border-top-left-radius: 1.2rem;
+}
+
+thead tr th:last-child{
+  border-top-right-radius: 1.2rem;
+}
+
+table tbody tr:last-child td.user{
+  border-bottom-left-radius: 1.2rem;
+}
+table tbody tr:last-child td.tdRemove{
+  border-bottom-right-radius: 1.2rem;
+}
+
+table tbody tr:nth-child(odd){
+  background: var(--bg-tbody-odd);
+
+}
+
+table tbody tr:nth-child(even){
+  background: var(--bg-tbody-even);  
+  border-radius: 99%;
+} 
+
+td.user,
+td.repositories,
+td.followers,
+td.tdRemove{
+  text-align: center;
+  /* border: 2px solid rgb(255, 251, 0); */
+}
+
+td.user img{
+  width: 5.6rem;
+  height: 5.6rem;
+  
+  margin: 1rem 0;
+  padding: initial;
+  border-radius: 50%;
+  
+  object-fit: cover;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
+
+}
+
+td .remove {
+  background: none;
+  border: none;
+  color: var(--fc-remuve) ;
+  cursor: pointer;
+}
+
+
+@media (min-width:789px) {
+  nav{
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    padding: 5vh 5vw;
+  }
+
+  .search{
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .search button{
+    width: 30%;
+  }
+
+  td .remove:is{
+    content: "X";
+  }
+
+}
